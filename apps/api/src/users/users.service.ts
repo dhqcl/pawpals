@@ -29,4 +29,15 @@ export class UsersService {
         const user = this.usersRepository.create(data);
         return this.usersRepository.save(user);
     }
+
+    async update(id: string, data: Partial<UserEntity>): Promise<UserEntity> {
+        await this.usersRepository.update(id, data);
+        const updated = await this.findOneById(id);
+        if (!updated) throw new Error('User not found');
+        return updated;
+    }
+
+    async findOneByUsername(username: string): Promise<UserEntity | null> {
+        return this.usersRepository.findOne({ where: { username }, relations: ['pets', 'pets.breed'] });
+    }
 }
