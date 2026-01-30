@@ -7,6 +7,7 @@ import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { WikiModule } from './wiki/wiki.module';
 import { PetsModule } from './pets/pets.module';
+import { PostsModule } from './posts/posts.module';
 
 @Module({
   imports: [
@@ -27,6 +28,7 @@ import { PetsModule } from './pets/pets.module';
     UsersModule,
     WikiModule,
     PetsModule,
+    PostsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

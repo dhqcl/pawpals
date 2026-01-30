@@ -28,4 +28,7 @@ export class UserEntity {
 
     @OneToMany('PetEntity', 'owner')
     pets: any[];
+
+    @OneToMany('PostEntity', 'author')
+    posts: any[];
 }

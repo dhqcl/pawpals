@@ -12,6 +12,15 @@ export enum Gender {
     FEMALE = 'FEMALE',
 }
 
+export interface Breed {
+    id: string;
+    name: string;
+    species: string;
+    example_image_url: string;
+    description?: string;
+    characteristics?: Record<string, any>;
+}
+
 export interface Pet {
     id: string;
     nickname: string;
@@ -22,12 +31,7 @@ export interface Pet {
     breedId?: string;
     ownerId: string;
     metadata?: Record<string, any>;
-    breed?: {
-        id: string;
-        name: string;
-        species: string;
-        example_image_url: string;
-    };
+    breed?: Breed;
 }
 
 export interface CreatePetDto {
