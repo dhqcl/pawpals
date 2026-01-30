@@ -1,6 +1,7 @@
 version: '3.8'
 
 services:
+  # Database & Cache
   postgres:
     image: postgres:15-alpine
     container_name: petverse-postgres
@@ -13,6 +14,8 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    networks:
+      - petverse-net
 
   redis:
     image: redis:7-alpine
@@ -22,6 +25,8 @@ services:
       - "6379:6379"
     volumes:
       - redis_data:/data
+    networks:
+      - petverse-net
 
   minio:
     image: minio/minio
@@ -32,12 +37,60 @@ services:
       MINIO_ROOT_USER: ${MINIO_ROOT_USER:-admin}
       MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-admin123}
     ports:
-      - "9000:9000"
-      - "9001:9001"
+      - "9100:9000" # Changed from 9000 to avoid conflict with Web
+      - "9101:9001"
     volumes:
       - minio_data:/data
+    networks:
+      - petverse-net
+
+  # Applications
+  api:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+    container_name: petverse-api
+    restart: always
+    depends_on:
+      - postgres
+      - redis
+    environment:
+      DATABASE_URL: postgres://${POSTGRES_USER:-admin}:${POSTGRES_PASSWORD:-admin123}@postgres:5432/${POSTGRES_DB:-petverse}
+      REDIS_URL: redis://redis:6379
+      JWT_SECRET: ${JWT_SECRET:-super-secret-key-change-in-production}
+      MINIO_ENDPOINT: minio
+      MINIO_PORT: 9000
+      MINIO_ACCESS_KEY: ${MINIO_ACCESS_KEY:-admin}
+      MINIO_SECRET_KEY: ${MINIO_SECRET_KEY:-admin123}
+      MINIO_BUCKET: ${MINIO_BUCKET:-petverse-media}
+      PORT: 4000
+    ports:
+      - "4000:4000"
+    networks:
+      - petverse-net
+
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+    container_name: petverse-web
+    restart: always
+    depends_on:
+      - api
+    environment:
+      NEXT_PUBLIC_API_URL: http://localhost:4000 # Client side
+      API_URL: http://api:4000 # Server side (if needed for SSR)
+    ports:
+      - "9000:3000" # Map 9000 to container 3000
+    networks:
+      - petverse-net
 
 volumes:
   postgres_data:
   redis_data:
   minio_data:
+
+
+networks:
+  petverse-net:
+    driver: bridge

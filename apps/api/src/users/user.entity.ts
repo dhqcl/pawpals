@@ -25,4 +25,7 @@ export class UserEntity {
 
     @UpdateDateColumn()
     updated_at: Date;
+
+    @OneToMany('PetEntity', 'owner')
+    pets: any[];
 }
