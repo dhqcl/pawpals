@@ -1,0 +1,332 @@
+[
+    {
+        "name": "Golden Retriever",
+        "species": "DOG",
+        "description": "Friendly, tolerant attitude. Intelligent and eager to please.",
+        "example_image_url": "https://images.unsplash.com/photo-1633722715463-d30f4f325e27?w=500&auto=format&fit=crop&q=60",
+        "characteristics": {
+            "energy": "High",
+            "grooming": "Moderate",
+            "size": "Large"
+        }
+    },
+    {
+        "name": "Labrador Retriever",
+        "species": "DOG",
+        "description": "Friendly, active and outgoing. High spirited and not afraid to show it.",
+        "example_image_url": "https://images.unsplash.com/photo-1591769225440-811ad7d6eca6?w=500&auto=format&fit=crop&q=60",
+        "characteristics": {
+            "energy": "High",
+            "grooming": "Low",
+            "size": "Large"
+        }
+    },
+    {
+        "name": "French Bulldog",
+        "species": "DOG",
+        "description": "Adaptable, playful, smart. Requires minimal exercise.",
+        "example_image_url": "https://images.unsplash.com/photo-1583511655826-05700442b31b?w=500&auto=format&fit=crop&q=60",
+        "characteristics": {
+            "energy": "Low",
+            "grooming": "Low",
+            "size": "Small"
+        }
+    },
+    {
+        "name": "German Shepherd",
+        "species": "DOG",
+        "description": "Confident, courageous, smart. A loyal guardian.",
+        "example_image_url": "https://images.unsplash.com/photo-1589941013453-ec89f33b5e95?w=500&auto=format&fit=crop&q=60",
+        "characteristics": {
+            "energy": "High",
+            "grooming": "Moderate",
+            "size": "Large"
+        }
+    },
+    {
+        "name": "Poodle",
+        "species": "DOG",
+        "description": "Active, proud, very smart. Hypoallergenic coat.",
+        "example_image_url": "https://images.unsplash.com/photo-1621780030836-823fc6ae89d6?w=500&auto=format&fit=crop&q=60",
+        "characteristics": {
+            "energy": "High",
+            "grooming": "High",
+            "size": "Varies"
+        }
+    },
+    {
+        "name": "Bulldog",
+        "species": "DOG",
+        "description": "Docile, willful, friendly. distinctive wrinkled face.",
+        "example_image_url": "https://images.unsplash.com/photo-1517849845537-4d257902454a?w=500&auto=format&fit=crop&q=60",
+        "characteristics": {
+            "energy": "Low",
+            "grooming": "Low",
+            "size": "Medium"
+        }
+    },
+    {
+        "name": "Beagle",
+        "species": "DOG",
+        "description": "Merry, curious, friendly. Great hunting dog and companion.",
+        "example_image_url": "https://images.unsplash.com/photo-1537151625747-768eb6cf92b2?w=500&auto=format&fit=crop&q=60",
+        "characteristics": {
+            "energy": "High",
+            "grooming": "Low",
+            "size": "Small"
+        }
+    },
+    {
+        "name": "Rottweiler",
+        "species": "DOG",
+        "description": "Loyal, loving, confident guardian. Robust and powerful.",
+        "example_image_url": "https://images.unsplash.com/photo-1567752881298-894bb81f9379?w=500&auto=format&fit=crop&q=60",
+        "characteristics": {
+            "energy": "Moderate",
+            "grooming": "Low",
+            "size": "Large"
+        }
+    },
+    {
+        "name": "German Shorthaired Pointer",
+        "species": "DOG",
+        "description": "Friendly, smart, willing to please. Versatile hunter.",
+        "example_image_url": "https://images.unsplash.com/photo-1541364983171-a8ba01e95cfc?w=500&auto=format&fit=crop&q=60",
+        "characteristics": {
+            "energy": "Very High",
+            "grooming": "Low",
+            "size": "Large"
+        }
+    },
+    {
+        "name": "Dachshund",
+        "species": "DOG",
+        "description": "Friendly, curious, spunky. Famous long body.",
+        "example_image_url": "https://images.unsplash.com/photo-1612195583950-b8fd34c87093?w=500&auto=format&fit=crop&q=60",
+        "characteristics": {
+            "energy": "Moderate",
+            "grooming": "Low",
+            "size": "Small"
+        }
+    },
+    {
+        "name": "Pembroke Welsh Corgi",
+        "species": "DOG",
+        "description": "Affectionate, smart, alert. Short legs but big personality.",
+        "example_image_url": "https://images.unsplash.com/photo-1612536053381-696179b53683?w=500&auto=format&fit=crop&q=60",
+        "characteristics": {
+            "energy": "High",
+            "grooming": "Moderate",
+            "size": "Small"
+        }
+    },
+    {
+        "name": "Australian Shepherd",
+        "species": "DOG",
+        "description": "Smart, work-oriented, exuberant. Requires a job to do.",
+        "example_image_url": "https://images.unsplash.com/photo-1503256207526-0d5d80fa2f47?w=500&auto=format&fit=crop&q=60",
+        "characteristics": {
+            "energy": "Very High",
+            "grooming": "Moderate",
+            "size": "Medium"
+        }
+    },
+    {
+        "name": "Yorkshire Terrier",
+        "species": "DOG",
+        "description": "Affectionate, sprightly, tomboyish. Small but brave.",
+        "example_image_url": "https://images.unsplash.com/photo-1596492784531-6e6eb5ea9205?w=500&auto=format&fit=crop&q=60",
+        "characteristics": {
+            "energy": "Moderate",
+            "grooming": "High",
+            "size": "Toy"
+        }
+    },
+    {
+        "name": "Boxer",
+        "species": "DOG",
+        "description": "Bright, fun-loving, active. Patient with children.",
+        "example_image_url": "https://images.unsplash.com/photo-1543071220-6ee5bf718681?w=500&auto=format&fit=crop&q=60",
+        "characteristics": {
+            "energy": "High",
+            "grooming": "Low",
+            "size": "Large"
+        }
+    },
+    {
+        "name": "Great Dane",
+        "species": "DOG",
+        "description": "Friendly, patient, dependable. The generic giant.",
+        "example_image_url": "https://images.unsplash.com/photo-1552053831-71594a27632d?w=500&auto=format&fit=crop&q=60",
+        "characteristics": {
+            "energy": "Moderate",
+            "grooming": "Low",
+            "size": "Giant"
+        }
+    },
+    {
+        "name": "Siberian Husky",
+        "species": "DOG",
+        "description": "Loyal, outgoing, mischievous. Very vocal and energetic.",
+        "example_image_url": "https://images.unsplash.com/photo-1605568427561-40dd23c2acea?w=500&auto=format&fit=crop&q=60",
+        "characteristics": {
+            "energy": "Very High",
+            "grooming": "High",
+            "size": "Medium"
+        }
+    },
+    {
+        "name": "Cavalier King Charles Spaniel",
+        "species": "DOG",
+        "description": "Affectionate, gentle, graceful. The ultimate lap dog.",
+        "example_image_url": "https://images.unsplash.com/photo-1529927066849-79b791a69825?w=500&auto=format&fit=crop&q=60",
+        "characteristics": {
+            "energy": "Moderate",
+            "grooming": "Moderate",
+            "size": "Small"
+        }
+    },
+    {
+        "name": "Doberman Pinscher",
+        "species": "DOG",
+        "description": "Loyal, fearless, alert. Sleek and powerful.",
+        "example_image_url": "https://images.unsplash.com/photo-1558230673-3b1a206f658c?w=500&auto=format&fit=crop&q=60",
+        "characteristics": {
+            "energy": "High",
+            "grooming": "Low",
+            "size": "Large"
+        }
+    },
+    {
+        "name": "Miniature Schnauzer",
+        "species": "DOG",
+        "description": "Friendly, smart, obedient. Distinctive beard and eyebrows.",
+        "example_image_url": "https://images.unsplash.com/photo-1520038410233-7141dd782f08?w=500&auto=format&fit=crop&q=60",
+        "characteristics": {
+            "energy": "Moderate",
+            "grooming": "Moderate",
+            "size": "Small"
+        }
+    },
+    {
+        "name": "Shiba Inu",
+        "species": "DOG",
+        "description": "Alert, active, attentive. Fox-like appearance.",
+        "example_image_url": "https://images.unsplash.com/photo-1548681528-6a5c45b66b42?w=500&auto=format&fit=crop&q=60",
+        "characteristics": {
+            "energy": "Moderate",
+            "grooming": "Moderate",
+            "size": "Small"
+        }
+    },
+    {
+        "name": "Persian",
+        "species": "CAT",
+        "description": "Sweet, gentle, quiet. Luxurious long coat.",
+        "example_image_url": "https://images.unsplash.com/photo-1498100152307-ce63fe6c2251?w=500&auto=format&fit=crop&q=60",
+        "characteristics": {
+            "energy": "Low",
+            "grooming": "High",
+            "size": "Medium"
+        }
+    },
+    {
+        "name": "Maine Coon",
+        "species": "CAT",
+        "description": "Gentle giant. Friendly, intelligent, dog-like.",
+        "example_image_url": "https://images.unsplash.com/photo-1561948955-570b270e7c36?w=500&auto=format&fit=crop&q=60",
+        "characteristics": {
+            "energy": "Moderate",
+            "grooming": "High",
+            "size": "Giant"
+        }
+    },
+    {
+        "name": "Ragdoll",
+        "species": "CAT",
+        "description": "Affectionate, laid-back, floppy. Blue eyes.",
+        "example_image_url": "https://images.unsplash.com/photo-1615494488582-7d2d38510f84?w=500&auto=format&fit=crop&q=60",
+        "characteristics": {
+            "energy": "Low",
+            "grooming": "Moderate",
+            "size": "Large"
+        }
+    },
+    {
+        "name": "British Shorthair",
+        "species": "CAT",
+        "description": "Calm, easygoing. Dense coat and chubby cheeks.",
+        "example_image_url": "https://images.unsplash.com/photo-1592194996308-7b43878e84a6?w=500&auto=format&fit=crop&q=60",
+        "characteristics": {
+            "energy": "Low",
+            "grooming": "Low",
+            "size": "Medium"
+        }
+    },
+    {
+        "name": "Siamese",
+        "species": "CAT",
+        "description": "Vocal, social, intelligent. Pointed coloration.",
+        "example_image_url": "https://images.unsplash.com/photo-1513245543132-31f40741e3d6?w=500&auto=format&fit=crop&q=60",
+        "characteristics": {
+            "energy": "High",
+            "grooming": "Low",
+            "size": "Medium"
+        }
+    },
+    {
+        "name": "Sphynx",
+        "species": "CAT",
+        "description": "Hairless, warm, affectionate. Extroverted personality.",
+        "example_image_url": "https://images.unsplash.com/photo-1516086877993-9c5950a2939b?w=500&auto=format&fit=crop&q=60",
+        "characteristics": {
+            "energy": "High",
+            "grooming": "Special",
+            "size": "Medium"
+        }
+    },
+    {
+        "name": "Bengal",
+        "species": "CAT",
+        "description": "Wild look, energetic, playful. Beautiful rosette markings.",
+        "example_image_url": "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=500&auto=format&fit=crop&q=60",
+        "characteristics": {
+            "energy": "Very High",
+            "grooming": "Low",
+            "size": "Medium"
+        }
+    },
+    {
+        "name": "Scottish Fold",
+        "species": "CAT",
+        "description": "Sweet, quiet, adorable folded ears. Owl-like look.",
+        "example_image_url": "https://images.unsplash.com/photo-1587599650394-463283307567?w=500&auto=format&fit=crop&q=60",
+        "characteristics": {
+            "energy": "Low",
+            "grooming": "Moderate",
+            "size": "Medium"
+        }
+    },
+    {
+        "name": "Abyssinian",
+        "species": "CAT",
+        "description": "Active, busy, playful. Ticked coat mostly.",
+        "example_image_url": "https://images.unsplash.com/photo-1583088580009-2d947c3e9e16?w=500&auto=format&fit=crop&q=60",
+        "characteristics": {
+            "energy": "High",
+            "grooming": "Low",
+            "size": "Medium"
+        }
+    },
+    {
+        "name": "Russian Blue",
+        "species": "CAT",
+        "description": "Quiet, gentle, shy. Green eyes and blue coat.",
+        "example_image_url": "https://images.unsplash.com/photo-1548681525-2e63bd353ce4?w=500&auto=format&fit=crop&q=60",
+        "characteristics": {
+            "energy": "Moderate",
+            "grooming": "Low",
+            "size": "Medium"
+        }
+    }
+]
