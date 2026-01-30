@@ -2,21 +2,8 @@
 
 import { useQuery } from '@tanstack/react-query';
 import api from '@/lib/api';
-import { BreedEntity } from '@petverse/shared'; // Type assumption based on backend
+import { Breed } from '@petverse/shared';
 import Link from 'next/link';
-
-// Quick fix for BreedEntity type if not exported from shared yet
-// Ideally we should export it from shared, but for now defining here or assuming it works if we added it.
-// Actually, earlier we added DTOs but maybe not Entity.
-// Let's create a types file or use 'any' temporarily if needed, but better to be safe.
-// I will check or just define interface locally if build fails.
-interface Breed {
-    id: string;
-    name: string;
-    species: 'DOG' | 'CAT' | 'OTHER';
-    description: string;
-    example_image_url: string;
-}
 
 export default function WikiPage() {
     const { data: breeds, isLoading } = useQuery({

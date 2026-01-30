@@ -1,14 +1,22 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from "next";
 import { Inter } from 'next/font/google';
 import "./globals.css";
-import { Providers } from "./providers";
 import { Navbar } from "@/components/navbar";
+import { Providers } from "./providers";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: "PetVerse",
-  description: "A social space for your pets",
+  description: "A social platform for pet lovers.",
+  manifest: "/manifest.json",
+};
+
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 export default function RootLayout({
@@ -18,10 +26,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} min-h-screen bg-neutral-50 antialiased`}>
+      <body
+        className={`${inter.className} antialiased min-h-screen flex flex-col`}
+      >
         <Providers>
           <Navbar />
-          <main className="min-h-[calc(100vh-4rem)]">
+          <main className="flex-1">
             {children}
           </main>
         </Providers>
