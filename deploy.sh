@@ -12,7 +12,11 @@ echo "📦 Pulling latest code..."
 git pull origin main
 
 # 2. Rebuild and restart containers
+# 2. Rebuild and restart containers
 echo "🐳 Building and starting containers..."
+# Stop existing containers to release ports
+docker-compose down
+
 # Use --build to ensure code changes are reflected
 # Use -d for detached mode
 docker-compose up -d --build --remove-orphans
