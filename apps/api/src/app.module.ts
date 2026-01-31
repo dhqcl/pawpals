@@ -8,6 +8,7 @@ import { UsersModule } from './users/users.module';
 import { WikiModule } from './wiki/wiki.module';
 import { PetsModule } from './pets/pets.module';
 import { PostsModule } from './posts/posts.module';
+import { UploadsModule } from './uploads/uploads.module';
 
 @Module({
   imports: [
@@ -29,6 +30,7 @@ import { PostsModule } from './posts/posts.module';
     WikiModule,
     PetsModule,
     PostsModule,
+    UploadsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

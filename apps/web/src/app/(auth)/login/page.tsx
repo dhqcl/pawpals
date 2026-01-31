@@ -8,6 +8,7 @@ import api from '@/lib/api';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { AuthResponseDto, LoginDto } from '@petverse/shared';
+import { useAuth } from '@/hooks/use-auth';
 
 export default function LoginPage() {
     const router = useRouter();
@@ -44,12 +45,12 @@ export default function LoginPage() {
 
                 <form onSubmit={handleSubmit} className="space-y-6">
                     <Input
-                        label="邮箱"
-                        type="email"
+                        label="用户名/邮箱"
+                        type="text"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         required
-                        placeholder="you@example.com"
+                        placeholder="PetLover123 或 you@example.com"
                     />
                     <Input
                         label="密码"

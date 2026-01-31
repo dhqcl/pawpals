@@ -32,7 +32,8 @@ export class AuthService {
     }
 
     async login(loginDto: LoginDto): Promise<AuthResponseDto> {
-        const user = await this.usersService.findOneByEmailWithPassword(loginDto.email);
+        // Allow login with either email or username (field is named 'email' in DTO but treated as identifier)
+        const user = await this.usersService.findByUsernameOrEmail(loginDto.email);
 
         if (!user) {
             throw new UnauthorizedException('Invalid credentials');

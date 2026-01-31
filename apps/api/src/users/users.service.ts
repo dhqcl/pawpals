@@ -21,6 +21,16 @@ export class UsersService {
         });
     }
 
+    async findByUsernameOrEmail(identifier: string): Promise<UserEntity | null> {
+        return this.usersRepository.findOne({
+            where: [
+                { email: identifier },
+                { username: identifier }
+            ],
+            select: ['id', 'username', 'email', 'password_hash', 'avatar_url', 'created_at'],
+        });
+    }
+
     async findOneById(id: string): Promise<UserEntity | null> {
         return this.usersRepository.findOne({ where: { id } });
     }

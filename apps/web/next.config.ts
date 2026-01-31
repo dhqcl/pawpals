@@ -9,6 +9,10 @@ const nextConfig: NextConfig = {
         source: '/api/:path*',
         destination: 'http://api:4000/:path*', // Proxy to Backend
       },
+      {
+        source: '/media/:path*',
+        destination: 'http://minio:9000/:path*', // Proxy to MinIO
+      },
     ];
   },
 };

@@ -19,6 +19,17 @@ interface Breed {
 // Actually useParams() returns ReadonlyURLSearchParams or Params.
 // Let's use standard pattern.
 
+// Helper to translate characteristics keys
+const formatKey = (key: string) => {
+    const map: Record<string, string> = {
+        temperament: '性格',
+        size: '体型',
+        exercise_needs: '运动需求',
+        coat: '毛发',
+    };
+    return map[key] || key;
+};
+
 export default function BreedDetailPage() {
     const { id } = useParams();
 
@@ -53,7 +64,7 @@ export default function BreedDetailPage() {
                     className="absolute top-8 left-8 flex items-center gap-2 text-white hover:text-brand-100 bg-black/20 backdrop-blur-md px-4 py-2 rounded-full transition-colors"
                 >
                     <ArrowLeft className="h-5 w-5" />
-                    Back to Wiki
+                    返回百科
                 </Link>
             </div>
 
@@ -61,7 +72,7 @@ export default function BreedDetailPage() {
                 <div className="bg-white rounded-3xl shadow-xl p-8 sm:p-12">
                     <div className="flex items-center gap-3 mb-4">
                         <span className="px-3 py-1 text-sm font-bold bg-brand-100 text-brand-700 rounded-full">
-                            {breed.species}
+                            {breed.species === 'DOG' ? '狗狗' : breed.species === 'CAT' ? '猫咪' : '其他'}
                         </span>
                     </div>
                     <h1 className="text-4xl sm:text-5xl font-bold text-neutral-900 mb-6">{breed.name}</h1>
@@ -72,7 +83,7 @@ export default function BreedDetailPage() {
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                         {Object.entries(breed.characteristics || {}).map(([key, value]) => (
                             <div key={key} className="bg-neutral-50 rounded-2xl p-6 text-center">
-                                <p className="text-sm font-medium text-neutral-500 uppercase tracking-wider mb-2">{key}</p>
+                                <p className="text-sm font-medium text-neutral-500 uppercase tracking-wider mb-2">{formatKey(key)}</p>
                                 <p className="text-lg font-semibold text-neutral-900 capitalize">{value}</p>
                             </div>
                         ))}

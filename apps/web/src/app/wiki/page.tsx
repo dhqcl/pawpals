@@ -17,8 +17,8 @@ export default function WikiPage() {
     return (
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div className="text-center mb-12">
-                <h1 className="text-4xl font-bold text-neutral-900">Pet Wiki</h1>
-                <p className="mt-4 text-lg text-neutral-600">Discover popular breeds and their characteristics</p>
+                <h1 className="text-4xl font-bold text-neutral-900">宠物百科</h1>
+                <p className="mt-4 text-lg text-neutral-600">探索热门宠物品种及其特征</p>
             </div>
 
             {isLoading ? (
