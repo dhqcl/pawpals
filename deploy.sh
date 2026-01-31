@@ -23,7 +23,7 @@ docker-compose up -d --build --remove-orphans
 
 echo "✨ Deployment Complete!"
 echo "-----------------------------------"
-echo "🌐 Web App: http://localhost:9000"
-echo "🔌 API: http://localhost:4000"
+echo "🌐 Web App: http://localhost:9001"
+echo "🔌 API: http://localhost:9000"
 echo "💾 MinIO Console: http://localhost:9101"
 echo "-----------------------------------"

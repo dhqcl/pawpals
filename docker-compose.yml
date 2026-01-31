@@ -55,6 +55,7 @@ services:
       - postgres
       - redis
     environment:
+    environment:
       DATABASE_URL: postgres://${POSTGRES_USER:-admin}:${POSTGRES_PASSWORD:-admin123}@postgres:5432/${POSTGRES_DB:-petverse}
       REDIS_URL: redis://redis:6379
       JWT_SECRET: ${JWT_SECRET:-super-secret-key-change-in-production}
@@ -65,7 +66,7 @@ services:
       MINIO_BUCKET: ${MINIO_BUCKET:-petverse-media}
       PORT: 4000
     ports:
-      - "4000:4000"
+      - "9000:4000" # Changed to 9000 as requested
     networks:
       - petverse-net
 
@@ -78,10 +79,10 @@ services:
     depends_on:
       - api
     environment:
-      NEXT_PUBLIC_API_URL: http://localhost:4000 # Client side
-      API_URL: http://api:4000 # Server side (if needed for SSR)
+      NEXT_PUBLIC_API_URL: http://localhost:9000 # Client side points to new API port
+      API_URL: http://api:4000 # Server side internal (unchanged)
     ports:
-      - "9000:3000" # Map 9000 to container 3000
+      - "9001:3000" # Moved to 9001 to free up 9000 for API
     networks:
       - petverse-net
 
