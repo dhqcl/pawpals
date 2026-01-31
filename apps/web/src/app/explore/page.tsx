@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
+import api from '@/lib/api';
 import { PostCard } from '@/components/feed/post-card';
 import { Search, TrendingUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -13,7 +13,7 @@ export default function ExplorePage() {
     const { data: posts, isLoading } = useQuery({
         queryKey: ['explore-posts'],
         queryFn: async () => {
-            const { data } = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/posts?limit=20`);
+            const { data } = await api.get('/posts?limit=20');
             return data.data;
         },
     });

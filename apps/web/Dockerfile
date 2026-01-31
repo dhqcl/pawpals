@@ -24,7 +24,7 @@ RUN npm run build -w packages/shared
 
 # Build web
 ARG NEXT_PUBLIC_API_URL
-ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
+ENV NEXT_PUBLIC_API_URL=/api
 ENV NEXT_TELEMETRY_DISABLED 1
 RUN npm run build -w apps/web
 
