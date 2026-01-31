@@ -39,12 +39,12 @@ export default function RegisterPage() {
             <div className="w-full max-w-md space-y-8 rounded-xl bg-white p-8 shadow-lg">
                 <div className="text-center">
                     <h1 className="text-3xl font-bold text-brand-600">PetVerse</h1>
-                    <p className="mt-2 text-neutral-600">Create your account.</p>
+                    <p className="mt-2 text-neutral-600">创建你的账号。</p>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-6">
                     <Input
-                        label="Username"
+                        label="用户名"
                         type="text"
                         value={formData.username}
                         onChange={(e) => setFormData({ ...formData, username: e.target.value })}
@@ -52,7 +52,7 @@ export default function RegisterPage() {
                         placeholder="PetLover123"
                     />
                     <Input
-                        label="Email"
+                        label="邮箱"
                         type="email"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -60,7 +60,7 @@ export default function RegisterPage() {
                         placeholder="you@example.com"
                     />
                     <Input
-                        label="Password"
+                        label="密码"
                         type="password"
                         value={formData.password}
                         onChange={(e) => setFormData({ ...formData, password: e.target.value })}
@@ -76,14 +76,14 @@ export default function RegisterPage() {
                     )}
 
                     <Button type="submit" className="w-full" size="lg" isLoading={mutation.isPending}>
-                        Create Account
+                        注册
                     </Button>
                 </form>
 
                 <p className="text-center text-sm text-neutral-600">
-                    Already have an account?{' '}
+                    已经有账号了？{' '}
                     <Link href="/login" className="font-medium text-brand-600 hover:text-brand-500">
-                        Sign in
+                        直接登录
                     </Link>
                 </p>
             </div>

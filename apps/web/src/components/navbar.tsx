@@ -15,9 +15,9 @@ export function Navbar() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     const navLinks = [
-        { name: 'Home', href: '/' },
-        { name: 'Explore', href: '/explore' },
-        { name: 'Wiki', href: '/wiki' },
+        { name: '首页', href: '/' },
+        { name: '发现', href: '/explore' },
+        { name: '百科', href: '/wiki' },
     ];
 
     return (
@@ -68,10 +68,10 @@ export function Navbar() {
                     ) : (
                         <>
                             <Link href="/login">
-                                <Button variant="ghost" size="sm">Log in</Button>
+                                <Button variant="ghost" size="sm">登录</Button>
                             </Link>
                             <Link href="/register">
-                                <Button size="sm">Sign up</Button>
+                                <Button size="sm">注册</Button>
                             </Link>
                         </>
                     )}
@@ -143,14 +143,14 @@ export function Navbar() {
                                             className="block rounded-md px-3 py-2 text-base font-medium text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900"
                                             onClick={() => setIsMobileMenuOpen(false)}
                                         >
-                                            Your Profile
+                                            你的资料
                                         </Link>
                                         <Link
                                             href="/settings"
                                             className="block rounded-md px-3 py-2 text-base font-medium text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900"
                                             onClick={() => setIsMobileMenuOpen(false)}
                                         >
-                                            Settings
+                                            设置
                                         </Link>
                                         <button
                                             className="block w-full text-left rounded-md px-3 py-2 text-base font-medium text-neutral-700 hover:bg-neutral-50 hover:text-neutral-900"
@@ -159,17 +159,17 @@ export function Navbar() {
                                                 setIsMobileMenuOpen(false);
                                             }}
                                         >
-                                            Sign out
+                                            退出登录
                                         </button>
                                     </div>
                                 </div>
                             ) : (
                                 <div className="grid grid-cols-2 gap-4 px-3">
                                     <Link href="/login" onClick={() => setIsMobileMenuOpen(false)}>
-                                        <Button variant="outline" className="w-full justify-center">Log in</Button>
+                                        <Button variant="outline" className="w-full justify-center">登录</Button>
                                     </Link>
                                     <Link href="/register" onClick={() => setIsMobileMenuOpen(false)}>
-                                        <Button className="w-full justify-center">Sign up</Button>
+                                        <Button className="w-full justify-center">注册</Button>
                                     </Link>
                                 </div>
                             )}

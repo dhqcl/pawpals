@@ -73,6 +73,8 @@ services:
     build:
       context: .
       dockerfile: apps/web/Dockerfile
+      args:
+        NEXT_PUBLIC_API_URL: http://localhost:9000
     container_name: petverse-web
     restart: always
     depends_on:

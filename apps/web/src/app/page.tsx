@@ -78,11 +78,11 @@ export default function FeedPage() {
             <div className="bg-white rounded-full h-20 w-20 flex items-center justify-center mx-auto mb-4 shadow-sm">
               <Sparkles className="h-10 w-10 text-brand-300" />
             </div>
-            <h3 className="text-lg font-semibold text-neutral-900">No posts yet</h3>
-            <p className="text-neutral-500 mt-2">Be the first to share something!</p>
+            <h3 className="text-lg font-semibold text-neutral-900">暂无动态</h3>
+            <p className="text-neutral-500 mt-2">快来发布你的第一条动态吧！</p>
             {user && (
               <Button onClick={() => setIsCreateOpen(true)} className="mt-6">
-                Create Post
+                发布动态
               </Button>
             )}
           </div>
