@@ -1,20 +1,18 @@
-FROM node:20-slim AS base
+FROM node:20 AS base
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable
 
 FROM base AS builder
 WORKDIR /app
-# libc6-compat not needed for debian-slim
-# Set working directory
 
 # Copy root package files
-COPY package.json package-lock.json ./
+COPY package.json ./
 COPY packages/shared/package.json ./packages/shared/
 COPY apps/api/package.json ./apps/api/
 
 # Install dependencies (including shared)
-RUN npm ci
+RUN npm install
 
 # Copy source code
 COPY packages/shared ./packages/shared
