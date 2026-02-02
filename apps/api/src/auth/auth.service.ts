@@ -37,16 +37,7 @@ export class AuthService {
             throw error;
         }
 
-        const payload = { sub: user.id, username: user.username };
-        return {
-            accessToken: await this.jwtService.signAsync(payload),
-            user: {
-                id: user.id,
-                username: user.username,
-                email: user.email,
-                avatar_url: user.avatar_url,
-            },
-        };
+
     }
 
     async login(loginDto: LoginDto): Promise<AuthResponseDto> {
