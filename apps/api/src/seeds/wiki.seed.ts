@@ -6,10 +6,21 @@ export const seedWiki = async (dataSource: DataSource) => {
     const breedRepo = dataSource.getRepository(BreedEntity);
 
     // Check if data exists
-    const count = await breedRepo.count();
-    if (count > 0) {
-        console.log('Clearing existing Wiki data to apply new seed...');
-        await breedRepo.clear();
+    try {
+        const count = await breedRepo.count();
+        if (count > 0) {
+            console.log('Attempts to clear existing Wiki data...');
+            try {
+                await breedRepo.clear();
+            } catch (e) {
+                console.warn('Failed to clear wiki data (likely due to existing references). Skipping seed.', e.message);
+                return;
+            }
+        }
+    } catch (e) {
+        console.error('Check count failed', e);
+        // Don't throw, let app start
+        return;
     }
 
     const breeds = [
