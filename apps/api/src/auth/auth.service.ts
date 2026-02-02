@@ -1,4 +1,4 @@
-import { Injectable, UnauthorizedException } from '@nestjs/common';
+import { Injectable, UnauthorizedException, ConflictException } from '@nestjs/common';
 import { UsersService } from '../users/users.service';
 import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcrypt';
@@ -13,11 +13,29 @@ export class AuthService {
 
     async register(registerDto: RegisterDto): Promise<AuthResponseDto> {
         const hashedPassword = await bcrypt.hash(registerDto.password, 10);
-        const user = await this.usersService.create({
-            username: registerDto.username,
-            email: registerDto.email,
-            password_hash: hashedPassword,
-        });
+        try {
+            const user = await this.usersService.create({
+                username: registerDto.username,
+                email: registerDto.email,
+                password_hash: hashedPassword,
+            });
+
+            const payload = { sub: user.id, username: user.username };
+            return {
+                accessToken: await this.jwtService.signAsync(payload),
+                user: {
+                    id: user.id,
+                    username: user.username,
+                    email: user.email,
+                    avatar_url: user.avatar_url,
+                },
+            };
+        } catch (error) {
+            if (error.code === '23505') { // Postgres unique violation
+                throw new ConflictException('Username or email already exists');
+            }
+            throw error;
+        }
 
         const payload = { sub: user.id, username: user.username };
         return {

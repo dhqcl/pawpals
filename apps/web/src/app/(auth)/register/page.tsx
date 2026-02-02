@@ -8,9 +8,11 @@ import api from '@/lib/api';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { AuthResponseDto, RegisterDto } from '@petverse/shared';
+import { useAuth } from '@/hooks/use-auth';
 
 export default function RegisterPage() {
     const router = useRouter();
+    const { login } = useAuth();
     const [formData, setFormData] = useState<RegisterDto>({ username: '', email: '', password: '' });
     const [error, setError] = useState('');
 
@@ -20,12 +22,11 @@ export default function RegisterPage() {
             return res.data;
         },
         onSuccess: (data) => {
-            localStorage.setItem('accessToken', data.accessToken);
-            localStorage.setItem('user', JSON.stringify(data.user));
-            router.push('/');
+            login(data.accessToken, data.user);
         },
         onError: (err: any) => {
-            setError(err.response?.data?.message || 'Registration failed');
+            const msg = err.response?.data?.message;
+            setError(msg === 'Username or email already exists' ? '用户名或邮箱已被注册' : (msg || '注册失败'));
         },
     });
 
