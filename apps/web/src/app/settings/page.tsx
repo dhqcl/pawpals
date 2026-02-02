@@ -37,8 +37,12 @@ export default function SettingsPage() {
         onSuccess: (updatedUser) => {
             // Update local storage and query cache
             localStorage.setItem('user', JSON.stringify(updatedUser)); // Basic sync
-            queryClient.setQueryData(['user', user.username], updatedUser);
-            router.push(`/u/${user.username}`);
+            if (user?.username) {
+                queryClient.setQueryData(['user', user.username], updatedUser);
+                router.push(`/u/${user.username}`);
+            } else {
+                router.push('/');
+            }
         },
     });
 
